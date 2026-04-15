@@ -46,7 +46,6 @@ const linkStyle = {
 
   // Databases
   { name: "MongoDB", img: "https://cdn.simpleicons.org/mongodb/47A248" },
-  { name: "MySQL", img: "https://cdn.simpleicons.org/mysql/4479A1" },
 
   // Web
   { name: "HTML", img: "https://cdn.simpleicons.org/html5/E34F26" },
@@ -121,7 +120,7 @@ const linkStyle = {
           </h3>
 
           <p style={{
-            maxWidth: "650px",
+            maxWidth: "500px",
             color: "#ccc",
             lineHeight: "1.6"
           }}>
@@ -142,7 +141,7 @@ const linkStyle = {
               borderRadius: "10px",
               position: "relative",
               zIndex: 2,
-              marginRight: "100px",
+              marginRight: "90px",
             }}
           />
 
