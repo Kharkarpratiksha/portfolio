@@ -3,6 +3,7 @@ import profile from "./images/Myprofile.png";
 import project1 from "./images/Project1_mockup.png";
 import project2 from "./images/Project2_mockup.png";
 import project3 from "./images/Project3_mockup.png";
+import "./App.css";
 
 export default function App() {
 
