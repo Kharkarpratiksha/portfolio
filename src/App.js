@@ -1,5 +1,5 @@
 import React from "react";
-import profile from "./images/Myprofile.png";
+import profile from "./images/Myprofile.jpeg";
 import project1 from "./images/Project1_mockup.png";
 import project2 from "./images/Project2_mockup.png";
 import project3 from "./images/Project3_mockup.png";
@@ -138,7 +138,7 @@ const linkStyle = {
             src={profile}
             alt="profile"
             style={{
-              width: "280px",
+              width: "380px",
               borderRadius: "10px",
               position: "relative",
               zIndex: 2,
@@ -150,7 +150,7 @@ const linkStyle = {
             position: "absolute",
             top: "20px",
             left: "20px",
-            width: "280px",
+            width: "380px",
             height: "100%",
             border: "3px solid #00e0ff",
             borderRadius: "10px",
