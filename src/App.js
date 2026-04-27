@@ -73,7 +73,7 @@ const linkStyle = {
         padding: "20px 120px",
         alignItems: "center"
       }}>
-        <h2>P_Kharkar</h2>
+        <h2>Pratiksha Kharkar</h2>
 
         <div style={{ display: "flex", gap: "30px" }}>
         <a href="#home" style={linkStyle}>Home</a>
