@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Pratiksha Kharkar — Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Multi-page React portfolio with animations, separate routes, and a polished dark design.
 
-## Available Scripts
+## Setup
 
-In the project directory, you can run:
+```bash
+# 1. Install dependencies (react-router-dom is required)
+npm install react-router-dom
 
-### `npm start`
+# 2. Start dev server
+npm start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## File Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+src/
+├── App.jsx                  ← Router root
+├── App.css                  ← All global styles & animations
+├── components/
+│   └── Navbar.jsx           ← Fixed navigation bar
+├── pages/
+│   ├── Home.jsx             ← Hero section + stats bar
+│   ├── Experience.jsx       ← Timeline + education card
+│   ├── Projects.jsx         ← Project cards with mock screenshots
+│   ├── Skills.jsx           ← Categorised skill grid
+│   └── Contact.jsx          ← Contact info + message form
+└── images/                  ← Drop your images here
+    ├── Myprofile.jpeg
+    ├── Project1_mockup.png
+    ├── Project2_mockup.png
+    └── Project3_mockup.png
+```
 
-### `npm test`
+## Swapping in Your Photos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Profile photo
+In `src/pages/Home.jsx`:
+1. Uncomment `import profile from "../images/Myprofile.jpeg";`
+2. Replace the `<!-- OPTION A -->` placeholder div with:
+   ```jsx
+   <img src={profile} alt="Pratiksha Kharkar" className="hero-img" />
+   ```
 
-### `npm run build`
+### Project screenshots
+In `src/pages/Projects.jsx`:
+1. Uncomment the three import lines at the top.
+2. Add `img: project1` (etc.) to the matching project object.
+   The `<MockCard />` placeholder is replaced automatically when `proj.img` exists.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Adding Email to the Contact Form
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In `src/pages/Contact.jsx`, replace the `setTimeout` inside `handleSubmit` with
+your preferred service, for example **EmailJS**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```js
+import emailjs from "@emailjs/browser";
 
-### `npm run eject`
+emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_PUBLIC_KEY")
+  .then(() => setStatus("sent"))
+  .catch(() => setStatus("idle"));
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Animations
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Hero text: CSS `@keyframes fadeUp` with staggered `animation-delay`
+- Hero image: CSS `@keyframes float` (gentle up/down loop)
+- Experience items: `IntersectionObserver` → adds `.visible` class → CSS transition
+- Skill cards: same observer with 50 ms per-card stagger
+- Project cards: same observer with 200 ms per-card stagger
+- Badge dot: CSS `@keyframes pulse` (cyan glow)
