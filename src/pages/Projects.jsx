@@ -29,7 +29,7 @@ const projects = [
     desc: "Enhanced Ender 3 printer with remote control & wireless file transfer using NodeMCU. Built a Flask backend with TCP/IP protocol for seamless wireless print management.",
     tags: ["NodeMCU", "Flask", "TCP/IP", "Python"],
     github: "https://github.com/Kharkarpratiksha/3D-printer-enhancement.git",
-    img: project3,
+    img: project2,
   },
   {
     num: "PROJECT 03",
@@ -37,7 +37,7 @@ const projects = [
     desc: "Recommends engineering colleges in Maharashtra based on student marks & preferences. Powered by Python & Flask with a recommendation algorithm filtering a curated dataset.",
     tags: ["Python", "Flask", "ML"],
     github: "https://github.com/Kharkarpratiksha/Engineering-college-recommendation-system.git",
-    img: project2,
+    img: project3,
   },
 ];
 
