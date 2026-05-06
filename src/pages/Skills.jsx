@@ -1,36 +1,58 @@
 import { useEffect, useRef } from "react";
-
 const skillCategories = [
   {
-    label: "Languages",
+    label: "Frontend",
     skills: [
-      { name: "Python",     img: "https://cdn.simpleicons.org/python/3776AB" },
-      { name: "JavaScript", img: "https://cdn.simpleicons.org/javascript/F7DF1E" },
-      { name: "SQL",        img: "https://cdn.simpleicons.org/mysql/4479A1" },
+      { name: "React.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "Angular", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
+      { name: "HTML5", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+      { name: "CSS3", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+      { name: "JavaScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+      { name: "TypeScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
     ],
   },
   {
-    label: "Frameworks & Libraries",
+    label: "Backend",
     skills: [
-      { name: "React",      img: "https://cdn.simpleicons.org/react/61DAFB" },
-      { name: "Node.js",    img: "https://cdn.simpleicons.org/nodedotjs/339933" },
-      { name: "Express.js", img: "https://cdn.simpleicons.org/express/888888" },
+      { name: "Node.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { name: "Express.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+      { name: "Flask", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" },
+      { name: "REST API", img: "https://cdn-icons-png.flaticon.com/512/2165/2165004.png" },
     ],
   },
   {
-    label: "Database & Web",
+    label: "Databases",
     skills: [
-      { name: "MongoDB", img: "https://cdn.simpleicons.org/mongodb/47A248" },
-      { name: "HTML5",   img: "https://cdn.simpleicons.org/html5/E34F26" },
-      { name: "CSS3", img: "https://cdn.simpleicons.org/css/1572B6" },    ],
+      { name: "MongoDB", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+      { name: "MongoDB Atlas", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+      { name: "MySQL", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+      { name: "PostgreSQL", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+    ],
   },
   {
-    label: "Tools",
+    label: "API & Testing",
     skills: [
-      { name: "Git",       img: "https://cdn.simpleicons.org/git/F05032" },
-      { name: "Postman",   img: "https://cdn.simpleicons.org/postman/FF6C37" },
-      { name: "Figma",     img: "https://cdn.simpleicons.org/figma/F24E1E" },
-      { name: "WordPress", img: "https://cdn.simpleicons.org/wordpress/21759B" },
+      { name: "Postman", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
+      { name: "Axios", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+      { name: "JSON", img: "https://cdn-icons-png.flaticon.com/512/136/136525.png" },
+    ],
+  },
+  {
+    label: "DevOps & Tools",
+    skills: [
+      { name: "Git", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+      { name: "GitHub", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+      { name: "Jenkins", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" },
+      { name: "Jira", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" },
+    ],
+  },
+  {
+    label: "Other",
+    skills: [
+      { name: "WordPress", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" },
+      { name: "Elementor", img: "https://cdn-icons-png.flaticon.com/512/5968/5968770.png" },
+      { name: "Figma", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+      { name: "Python", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
     ],
   },
 ];

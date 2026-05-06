@@ -1,14 +1,29 @@
 import { useState } from "react";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
-  const [status, setStatus] = useState("idle"); // idle | sending | sent
+  const [status, setStatus] = useState("idle");
 
   function handleSubmit(e) {
     e.preventDefault();
     setStatus("sending");
-    // Wire up your real email service (EmailJS, Formspree, etc.) here.
-    // For now we simulate a 1.2 s delay:
-    setTimeout(() => setStatus("sent"), 1200);
+
+    emailjs
+      .sendForm(
+        "service_vyfnuzp",   
+        "template_4bttjcl", 
+        e.target,
+        "3Rmf_CuFClxziaxWM"    
+      )
+      .then(() => {
+        setStatus("sent");
+        e.target.reset();
+      })
+      .catch((error) => {
+        console.error(error);
+        setStatus("idle");
+        alert("Something went wrong. Please try again.");
+      });
   }
 
   return (
@@ -16,14 +31,15 @@ export default function Contact() {
       <div className="page-inner" style={{ minHeight: "calc(100vh - 74px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
 
         <div className="contact-grid">
-          {/* LEFT — info */}
+          
+          {/* LEFT */}
           <div>
             <h2 className="contact-big">
               Let's build<br />something <span>great</span><br />together.
             </h2>
+
             <p className="contact-sub">
-              I'm currently open to new opportunities — freelance projects,
-              internships, or full-time roles. Feel free to reach out!
+              I'm open to freelance, internships, or full-time roles.
             </p>
 
             <div className="contact-items">
@@ -31,9 +47,10 @@ export default function Contact() {
                 <div className="contact-icon">✉️</div>
                 <div className="contact-info">
                   <label>EMAIL</label>
-                  <span>kharkarpratikshaamol@gmail.com</span>
+                  <span>yourmail@gmail.com</span>
                 </div>
               </div>
+
               <div className="contact-item">
                 <div className="contact-icon">📍</div>
                 <div className="contact-info">
@@ -44,37 +61,41 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* RIGHT — form */}
+          {/* RIGHT FORM */}
           <form className="contact-form-side" onSubmit={handleSubmit}>
+            
             <div className="form-group">
               <label>YOUR NAME</label>
-              <input type="text" className="form-input" placeholder="Rahul Sharma" required />
+              <input name="user_name" type="text" className="form-input" required />
             </div>
+
             <div className="form-group">
               <label>EMAIL ADDRESS</label>
-              <input type="email" className="form-input" placeholder="rahul@example.com" required />
+              <input name="user_email" type="email" className="form-input" required />
             </div>
+
             <div className="form-group">
               <label>SUBJECT</label>
-              <input type="text" className="form-input" placeholder="Project collaboration" required />
+              <input name="subject" type="text" className="form-input" required />
             </div>
+
             <div className="form-group">
               <label>MESSAGE</label>
-              <textarea className="form-input" placeholder="Tell me about your project..." required />
+              <textarea name="message" className="form-input" required />
             </div>
 
             <button
               type="submit"
               className={`form-submit${status === "sent" ? " sent" : ""}`}
-              disabled={status !== "idle"}
+              disabled={status === "sending"}
             >
-              {status === "idle"    && "Send Message →"}
+              {status === "idle" && "Send Message →"}
               {status === "sending" && "Sending..."}
-              {status === "sent"    && "Message Sent! ✓"}
+              {status === "sent" && "Message Sent! ✓"}
             </button>
+
           </form>
         </div>
-
       </div>
     </div>
   );
