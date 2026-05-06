@@ -7,7 +7,7 @@ import project4 from "../images/Project4_mockup.png";
 
 const projects = [
   {
-  num: "PROJECT 04",
+  num: "PROJECT 01",
   title: "UX Analyzer",
   desc: "A UX analysis tool that evaluates UI/UX quality of websites and provides insights to improve usability, accessibility, and design performance.",
   tags: ["React", "Next.js", "UI/UX", "Analysis Tool"],
@@ -16,7 +16,7 @@ const projects = [
   img: project4,
 },
   {
-    num: "PROJECT 01",
+    num: "PROJECT 02",
     title: "Flower E-commerce Website",
     desc: "Full-stack e-commerce platform with product listing, cart & order system. Built with React frontend and a complete Node.js/Express backend API with MongoDB for persistence.",
     tags: ["React", "Node.js", "Express", "MongoDB"],
@@ -24,7 +24,7 @@ const projects = [
     img: project1,
   },
   {
-    num: "PROJECT 02",
+    num: "PROJECT 03",
     title: "3D Printer Enhancement",
     desc: "Enhanced Ender 3 printer with remote control & wireless file transfer using NodeMCU. Built a Flask backend with TCP/IP protocol for seamless wireless print management.",
     tags: ["NodeMCU", "Flask", "TCP/IP", "Python"],
@@ -32,7 +32,7 @@ const projects = [
     img: project2,
   },
   {
-    num: "PROJECT 03",
+    num: "PROJECT 04",
     title: "College Recommendation System",
     desc: "Recommends engineering colleges in Maharashtra based on student marks & preferences. Powered by Python & Flask with a recommendation algorithm filtering a curated dataset.",
     tags: ["Python", "Flask", "ML"],
