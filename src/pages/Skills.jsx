@@ -22,8 +22,7 @@ const skillCategories = [
     skills: [
       { name: "MongoDB", img: "https://cdn.simpleicons.org/mongodb/47A248" },
       { name: "HTML5",   img: "https://cdn.simpleicons.org/html5/E34F26" },
-      { name: "CSS3",    img: "https://cdn.simpleicons.org/css3/1572B6" },
-    ],
+      { name: "CSS3", img: "https://cdn.simpleicons.org/css/1572B6" },    ],
   },
   {
     label: "Tools",

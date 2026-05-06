@@ -16,11 +16,6 @@ const experiences = [
     period: "Jan 2025 – Apr 2025",
     desc: "Assisted in development and debugging of web applications. Built reusable UI components and improved code quality across the team's projects.",
   },
-  {
-    role: "Open Source Contributor",
-    period: "2024 – Present",
-    desc: "Contributing to frontend open-source projects, fixing UI bugs and improving documentation for developer communities.",
-  },
 ];
 
 export default function Experience() {
